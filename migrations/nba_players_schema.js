@@ -1,4 +1,4 @@
-exports.up = (knex, Promise) => {
+exports.up = (knex, _Promise) => {
   knex.schema.hasTable(process.env.db_table).then(exist => {
     if (!exist) {
       return knex.schema.createTable(process.env.db_table, table => {

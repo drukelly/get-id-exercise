@@ -4,7 +4,10 @@ class User {
   constructor (table = 'users') {
     this.table = table
   }
-  get (where, data) {
+  getAll (data) {
+    return knex(this.table)
+  }
+  getID (where, data) {
     return knex(this.table)
       .select(where)
   }

@@ -1,19 +1,8 @@
 {
   "name": "get-id-exercise",
-  "version": "1.0.0",
   "description": "A sample codebase to get id from a database and return data",
-  "dependencies": {
-    "concurrently": "^4.1.1",
-    "if-env": "^1.0.4",
-    "knex": "^0.19.1",
-    "lodash": "^4.17.15",
-    "mysql": "^2.17.1",
-    "nodemon": "^1.19.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "tachyons-components": "^1.0.1"
-  },
+  "version": "1.0.0",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
@@ -24,11 +13,27 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
+  "dependencies": {
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "fsevents": "^2.0.7",
+    "if-env": "^1.0.4",
+    "knex": "^0.19.1",
+    "mysql": "^2.17.1",
+    "tachyons-components": "^1.0.1",
+    "typescript": "^3.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drukelly/get-id-exercise.git"
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "main": "server.js",
-  "devDependencies": {},
+  "devDependencies": {
+    "concurrently": "^4.1.1",
+    "nodemon": "^1.19.1"
+  },
   "author": "Dru Kelly",
   "license": "ISC"
 }

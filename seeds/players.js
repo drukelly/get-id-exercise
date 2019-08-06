@@ -1,4 +1,4 @@
-exports.seed = (knex, Promise) => {
+exports.seed = (knex, _Promise) => {
   return knex(process.env.db_table).del()
     .then(function () {
       return knex(process.env.db_table).insert([
