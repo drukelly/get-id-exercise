@@ -20,11 +20,13 @@ class App extends Component {
       user: ''
     }
   }
+
   componentDidMount () {
     this.setState({
       user: 'Dru'
     })
   }
+
   render () {
     return (
       <Wrapper>
