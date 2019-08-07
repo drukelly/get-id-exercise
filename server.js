@@ -7,12 +7,12 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 // routes
-require(path.join(__dirname, './routes/user.js'))(app)
+require(path.join(__dirname, './routes/api.js'))(app)
 
 if (process.env.NODE_ENV === 'production') app.use(express.static('client/build'))
 
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, './client/build/index.html'))
+  if (process.env.NODE_ENV === 'production') res.sendFile(path.join(__dirname, './client/build/index.html'))
 })
 
 app.listen(PORT, () => {

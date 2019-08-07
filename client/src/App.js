@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
+import Card from './components/Card'
 import styled from 'tachyons-components'
 
 const Wrapper = styled('div')`
-b
 bg-blue
 flex
+flex-wrap
 items-center
 justify-center
 min-vh-100
@@ -17,20 +18,28 @@ class App extends Component {
   constructor (props) {
     super(props)
     this.state = {
-      user: ''
+      players: [],
+      player: ''
     }
   }
 
   componentDidMount () {
-    this.setState({
-      user: 'Dru'
-    })
+    fetch('/api/players')
+      .then(results => results.json())
+      .then(res => {
+        this.setState({
+          players: res
+        })
+      })
+      .catch(error => console.log(error))
   }
 
   render () {
     return (
       <Wrapper>
-        Hello {this.state.user ? `${this.state.user}` : 'World'}!
+          {this.state.players.map(player => {
+            return <Card key={player.id} jersey_number={player.jersey_number} name={player.name} image={player.image} />
+          })}
       </Wrapper>
     )
   }
