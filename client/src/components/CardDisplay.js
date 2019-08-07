@@ -22,7 +22,7 @@ const CardDisplay = props => {
       <PhotoContainer>
         <Photo style={{ backgroundImage: `url(${props.image})` }} />
       </PhotoContainer>
-      <h3 className='fw2'>#{props.jersey_number} <b>{props.name}</b></h3>
+      <h3 className='fw2'><small className='black-50'>{props.jersey_number}</small> <b>{props.name}</b></h3>
     </div>
   )
 }
