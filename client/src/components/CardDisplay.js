@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import tc from 'tachyons-components'
 
@@ -17,15 +16,15 @@ margin: auto;
 width: 64px;
 `
 
-const Card = props => {
+const CardDisplay = props => {
   return (
-    <Link to={`/player/${props.id}`} className=' bg-black-10 hover-bg-white-30 link mh2 mv2-m mv1 near-black pa2 tc w-90 w-25-l'>
+    <div className='bg-white-30 link mh2 mv2-m mv1 near-black pa2 tc w-90 w-25-l'>
       <PhotoContainer>
         <Photo style={{ backgroundImage: `url(${props.image})` }} />
       </PhotoContainer>
       <h3 className='fw2'>#{props.jersey_number} <b>{props.name}</b></h3>
-    </Link>
+    </div>
   )
 }
 
-export default Card
+export default CardDisplay

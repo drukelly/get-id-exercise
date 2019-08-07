@@ -9,14 +9,13 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
-    "install": "cd client && npm install",
+    "install": "cd client && yarn",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
   "dependencies": {
     "dotenv": "^8.0.0",
     "express": "^4.17.1",
-    "fsevents": "^2.0.7",
     "if-env": "^1.0.4",
     "knex": "^0.19.1",
     "mysql": "^2.17.1",
@@ -28,11 +27,14 @@
     "type": "git",
     "url": "git+https://github.com/drukelly/get-id-exercise.git"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
   "devDependencies": {
     "concurrently": "^4.1.1",
+    "eslint-config-standard": "^13.0.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-node": "^9.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.14.3",
+    "eslint-plugin-standard": "^4.0.0",
     "nodemon": "^1.19.1"
   },
   "author": "Dru Kelly",

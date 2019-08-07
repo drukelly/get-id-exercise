@@ -1,18 +1,7 @@
 import React, { Component } from 'react'
-import Card from './components/Card'
-import styled from 'tachyons-components'
-
-const Wrapper = styled('div')`
-bg-blue
-flex
-flex-wrap
-items-center
-justify-center
-min-vh-100
-pa4
-sans-serif
-white
-`
+import { BrowserRouter as Router, Route } from 'react-router-dom'
+import Home from './components/pages/Home'
+import Player from './components/pages/Player'
 
 class App extends Component {
   constructor (props) {
@@ -22,25 +11,12 @@ class App extends Component {
       player: ''
     }
   }
-
-  componentDidMount () {
-    fetch('/api/players')
-      .then(results => results.json())
-      .then(res => {
-        this.setState({
-          players: res
-        })
-      })
-      .catch(error => console.log(error))
-  }
-
   render () {
     return (
-      <Wrapper>
-          {this.state.players.map(player => {
-            return <Card key={player.id} jersey_number={player.jersey_number} name={player.name} image={player.image} />
-          })}
-      </Wrapper>
+      <Router>
+        <Route exact path='/' component={Home} />
+        <Route path='/player' component={Player} />
+      </Router>
     )
   }
 }
