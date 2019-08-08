@@ -23,7 +23,7 @@ class Home extends Component {
       player: ''
     }
   }
-  
+
   componentDidMount () {
     fetch('/api/players')
       .then(results => results.json())
@@ -36,7 +36,7 @@ class Home extends Component {
   }
 
   render () {
-    return(
+    return (
       <Wrapper>
         {this.state.players.map(player => {
           return <Card key={player.id} id={player.id} jersey_number={player.jersey_number} name={player.name} image={player.image} />

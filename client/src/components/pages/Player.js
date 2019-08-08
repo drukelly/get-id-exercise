@@ -23,7 +23,6 @@ class Player extends Component {
       playerID: window.location.href
     }
   }
-  
   componentDidMount () {
     let pointer = this.state.playerID
     let id = pointer.substring(pointer.lastIndexOf('/') + 1)
@@ -38,10 +37,19 @@ class Player extends Component {
   }
 
   render () {
-    return(
+    return (
       <Wrapper>
         {this.state.player.map(player => {
-          return <CardDisplay key={player.id} id={player.id} jersey_number={player.jersey_number} name={player.name} image={player.image} />
+          return <CardDisplay
+            key={player.id}
+            id={player.id}
+            name={player.name}
+            jersey_number={player.jersey_number}
+            pts={player.pts}
+            field_goals={player.field_goals}
+            free_throws={player.free_throws}
+            ast={player.ast}
+            image={player.image} />
         })}
       </Wrapper>
     )

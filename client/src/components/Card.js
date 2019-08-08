@@ -19,7 +19,7 @@ width: 64px;
 
 const Card = props => {
   return (
-    <Link to={`/player/${props.id}`} className=' bg-black-10 hover-bg-white-30 link mh2 mv2-m mv1 near-black pa2 tc w-90 w-25-l'>
+    <Link to={`/player/${props.id}`} className=' bg-black-10 br3 hover-bg-white-30 link ma2 near-black pa2 tc w-80 w-25-l'>
       <PhotoContainer>
         <Photo style={{ backgroundImage: `url(${props.image})` }} />
       </PhotoContainer>
